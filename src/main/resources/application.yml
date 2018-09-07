@@ -1,6 +1,16 @@
 spring:
-  application:
-    name: company-service
-
+  profiles:
+    active: default
+    
 server:
   port: 8102    
+
+---
+spring:
+  profiles: default
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/company_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
