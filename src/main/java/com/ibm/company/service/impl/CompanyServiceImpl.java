@@ -9,6 +9,8 @@ import com.ibm.company.entities.Company;
 import com.ibm.company.repository.ICompanyRepository;
 import com.ibm.company.service.ICompanyService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 
  * @author saket
@@ -16,8 +18,10 @@ import com.ibm.company.service.ICompanyService;
  * Company Information
  */
 @Service
+@Slf4j
 public class CompanyServiceImpl implements ICompanyService {
 
+	final String className = CompanyServiceImpl.class.toString();
 	@Autowired
 	ICompanyRepository companyRepository;
 	
@@ -26,6 +30,8 @@ public class CompanyServiceImpl implements ICompanyService {
 	 */
 	@Override
 	public List<Company> getAllCompanies() {
+		String methodName = "getAllCompanies()";
+		log.info(className+","+methodName);
 		return companyRepository.findAll();
 		
 	}
@@ -36,7 +42,9 @@ public class CompanyServiceImpl implements ICompanyService {
 	 */
 	@Override
 	public Company getAllCompaniesById(Integer id) {
-		
+		String methodName = "getAllCompaniesById(Integer id)";
+		log.info(className+","+methodName);
+		log.debug("id value is::"+id);
 		return companyRepository.findCompanyById(id.longValue());
 	}
 
@@ -45,7 +53,9 @@ public class CompanyServiceImpl implements ICompanyService {
 	 */
 	@Override
 	public Company getAllCompaniesByCode(Integer code) {
-		
+		String methodName = "getAllCompaniesById(Integer id)";
+		log.info(className+","+methodName);
+		log.debug("company code  is::"+code);
 		return companyRepository.findCompanyByCode(code.longValue());
 	}
 

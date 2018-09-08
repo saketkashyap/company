@@ -1,6 +1,30 @@
 spring:
+  profiles:
+    active: default
   application:
     name: company-service
-
 server:
   port: 8102    
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8200}/eureka/
+    fetch-registry: true
+    register-with-eureka: true  
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    
+ribbon:
+  eureka:
+   enabled: true    
+---
+spring:
+  profiles: default
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/company_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver

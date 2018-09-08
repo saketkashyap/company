@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ibm.company.entities.Company;
+import com.ibm.company.model.CompanyModel;
 
 @RequestMapping("/company")
 public interface ICompanyController {
@@ -17,5 +18,5 @@ public interface ICompanyController {
 	@RequestMapping(value="/id/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Company> getCompanyByCompanyId(@PathVariable("id") Integer id);
 	@RequestMapping(value="/code/{code}",method=RequestMethod.GET)
-	public ResponseEntity<Company> getCompanyByCompanyCode(@PathVariable("code") Integer code);
+	public CompanyModel getCompanyByCompanyCode(@PathVariable("code") Integer code);
 }
