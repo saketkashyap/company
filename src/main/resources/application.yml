@@ -1,8 +1,19 @@
 spring:
   profiles:
     active: default
+  
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: Admin
+    password: Admin
+    virtual-host: saket
   application:
     name: company-service
+RabbitMq:
+ queue:
+  command: commandQueue
+  order: orderQueue     
 server:
   port: 8102    
 
@@ -19,6 +30,7 @@ eureka:
 ribbon:
   eureka:
    enabled: true    
+   
 ---
 spring:
   profiles: default

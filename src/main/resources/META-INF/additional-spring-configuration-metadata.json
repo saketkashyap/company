@@ -1,5 +1,17 @@
-{"properties": [{
-  "name": "ribbon.eureka.enabled",
-  "type": "java.lang.String",
-  "description": "A description for 'ribbon.eureka.enabled'"
-}]}
+{"properties": [
+  {
+    "name": "ribbon.eureka.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.eureka.enabled'"
+  },
+  {
+    "name": "Rabbit-mq.queue.command",
+    "type": "java.lang.String",
+    "description": "A description for 'Rabbit-mq.queue.command'"
+  },
+  {
+    "name": "Rabbit-mq.queue.order",
+    "type": "java.lang.String",
+    "description": "A description for 'Rabbit-mq.queue.order'"
+  }
+]}
